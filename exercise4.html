@@ -1,1 +1,66 @@
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        width: 500px;
+      }
+      #btn {
+        font-size: 100px;
+      }
+      #minus {
+        height: 100px;
+        width: 100px;
+      }
+      #plus {
+        height: 100px;
+        width: 100px;
+      }
+      #reset {
+        height: 100px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="btn">0</p>
+    <div id="contaier">
+      <button id="minus">-</button>
+      <button id="plus">+</button>
+      <button id="reset">Reset</button>
+    </div>
+    <script>
+      let minus = document.getElementById("minus");
+      let plus = document.getElementById("plus");
+      let reset = document.getElementById("reset");
+      let btn = document.getElementById("btn");
+      let f = 0;
+      minus.addEventListener("click", () => {
+        f--;
+        if (f < 0) {
+          btn.style.color = "red";
+        }
+        btn.textContent = f;
+      });
+      plus.addEventListener("click", () => {
+        f++;
+        if (f > 0 || f == 0) {
+          btn.style.color = "black";
+        }
+        btn.textContent = f;
+      });
+      reset.addEventListener("click", () => {
+        f = 0;
+        btn.style.color = "black";
+        btn.textContent = f;
+      });
+    </script>
+  </body>
+</html>
